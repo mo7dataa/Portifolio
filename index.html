@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mohamed Ahmed — Data Analyst Portfolio</title>
+
+<!-- Fonts & Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #030712;
+  --card-bg: rgba(17, 24, 39, 0.7);
+  --accent: #38bdf8;
+  --accent-secondary: #818cf8;
+  --text-primary: #f9fafb;
+  --text-muted: #9ca3af;
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+              
+body {
+  background-color: var(--bg);
+  /* نمط بيانات خلفي (Grid Points) */
+  background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0);
+  background-size: 30px 30px;
+  color: var(--text-primary);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.shell {
+  width: 100%;
+  max-width: 680px;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.card {
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 32px;
+  padding: 45px 35px;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+  position: relative;
+}
+
+/* وهج خلف الصورة */
+.avatar-glow {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 180px;
+  height: 180px;
+  background: var(--accent);
+  filter: blur(60px);
+  opacity: 0.2;
+  z-index: -1;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.avatar {
+  width: 130px;
+  height: 130px;
+  margin: 0 auto 20px;
+  padding: 3px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+  border-radius: 50%;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #111827;
+}
+
+.name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin-bottom: 10px;
+}
+
+.bio {
+  color: var(--accent);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  color: var(--text-primary);
+  margin: 40px 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-title i {
+  color: var(--accent-secondary);
+}
+
+.about {
+  color: var(--text-muted);
+  font-size: 15.5px;
+  line-height: 1.8;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 20px;
+  border-radius: 20px;
+  border-left: 3px solid var(--accent);
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill {
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  padding: 8px 14px;
+  border-radius: 12px;
+  font-size: 13px;
+  color: var(--accent);
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.skill:hover {
+  background: var(--accent);
+  color: #000;
+  box-shadow: 0 0 15px var(--accent);
+}
+
+.links {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  color: var(--text-primary);
+  padding: 18px 24px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  border: 1px solid var(--glass-border);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--accent-secondary);
+  transform: translateX(10px);
+}
+
+.btn-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.btn i {
+  font-size: 18px;
+  color: var(--accent);
+}
+@media (min-width: 550px) {
+  .project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="shell">
+  <div class="avatar-glow"></div>
+  <main class="card">
+    
+    <header>
+      <div class="avatar">
+        <img src="./profile.webp" alt="Mohamed Ahmed">
+      </div>
+      <h1 class="name">Mohamed Ahmed</h1>
+      <p class="bio">Data Analyst Specialist</p>
+    </header>
+
+    <section>
+      <h2 class="section-title"><i class="fas fa-terminal"></i> Brief</h2>
+      <p class="about">
+        Passionate Data Analyst focused on transforming complex datasets into actionable insights. 
+        Expertise in Python, SQL, and Power BI for data storytelling and business intelligence.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="section-title"><i class="fas fa-microchip"></i> Tech Stack</h2>
+      <div class="skills">
+        <div class="skill">EDA</div>
+        <div class="skill">EXcel</div>
+        <div class="skill">SQL</div>
+        <div class="skill">Python</div>
+        <div class="skill">Pandas</div>
+        <div class="skill">Numpy</div>
+        <div class="skill">Re</div>
+        <div class="skill">Visualization</div>
+        <div class="skill">Matplotlib</div>
+        <div class="skill">Seaborn</div>
+        <div class="skill">Plotly</div>
+        <div class="skill">Power BI</div>
+        <div class="skill">Machine Learning Basics</div>
+        
+
+
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title"><i class="fas fa-database"></i> Featured Projects</h2>
+      <div class="project-grid">
+        <a class="btn" href="https://github.com/mo7dataa/Fraud-Project" target="_blank">
+          <div class="btn-content"><i class="fas fa-shield-virus"></i><span>Fraud Project</span></div>
+        </a>
+        <a class="btn" href="https://github.com/mo7dataa/Car-Project" target="_blank">
+          <div class="btn-content"><i class="fas fa-car"></i><span>Car Analysis</span></div>
+        </a>
+        <a class="btn" href="https://github.com/mo7dataa/Marketing-Project" target="_blank">
+          <div class="btn-content"><i class="fas fa-ad"></i><span>Marketing Ads</span></div>
+        </a>
+        <a class="btn" href="https://github.com/mo7dataa/Internet-Project" target="_blank">
+          <div class="btn-content"><i class="fas fa-wifi"></i><span>Internet Usage</span></div>
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title"><i class="fas fa-envelope-open-text"></i> Connect</h2>
+      <div class="links">
+        <a class="btn" href="https://www.linkedin.com/in/mohamed-ahmed-7b8806408?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">
+          <div class="btn-content"><i class="fab fa-linkedin"></i><span>LinkedIn</span></div>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+        <a class="btn" href="https://github.com/mo7dataa" target="_blank">
+          <div class="btn-content"><i class="fab fa-github"></i><span>GitHub Profile</span></div>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+        <a class="btn" href="https://wa.me/qr/ROPZZVJSHYNTH1" target="_blank">
+          <div class="btn-content"><i class="fab fa-whatsapp"></i><span>WhatsApp</span></div>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+        <a class="btn" href="mailto:ahmdsydmhmd123@gmail.com">
+          <div class="btn-content"><i class="fas fa-envelope"></i><span>Send Email</span></div>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+</body>
+</html>
